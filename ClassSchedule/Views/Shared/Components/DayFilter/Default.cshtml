@@ -1,0 +1,13 @@
+﻿
+
+@model IEnumerable<ClassSchedule.Models.Day>
+
+@{
+  //  int currentDayId = (int?)ViewContext.RouteData.Values["id"] ?? 0;
+    int currentDayId = Convert.ToInt32(ViewContext.RouteData.Values["id"] ?? 0);
+}
+
+@foreach (Day d in Model)
+{
+    <my-link-button action="Index" id="@d.DayId" class="me-1 mb-2">@d.Name</my-link-button>
+}
